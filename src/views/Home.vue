@@ -27,6 +27,7 @@ export default {
 .home
   width 100%
   height 100%
+  min-width 600px
   overflow hidden
   display flex
   flex-direction column
@@ -41,7 +42,13 @@ export default {
 
     .sidebar
       flex 0 0 auto
+      height 100%
 
     .content
       flex 1
+      height 100%
+      padding 20px
+      box-sizing border-box
+      background #f5f5f5
+      overflow hidden
 </style>

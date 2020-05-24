@@ -6,7 +6,7 @@ Vue.use(VueRouter)
 const routes: Array<RouteConfig> = [
   {
     path: '/',
-    redirect: '/admin'
+    redirect: '/dashboard'
   },
   {
     path: '/admin',
@@ -17,6 +17,11 @@ const routes: Array<RouteConfig> = [
         path: '/dashboard',
         name: 'Dashboard',
         component: () => import('../views/pages/Dashboard.vue'),
+      },
+      {
+        path: '/custom',
+        name: 'Custom',
+        component: () => import('../views/pages/Custom.vue'),
       }
     ]
   },
