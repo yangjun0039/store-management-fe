@@ -3,7 +3,7 @@
     <Header />
 
     <main>
-        <Sidebar />
+      <Sidebar />
 
       <div class="content">
         <router-view />

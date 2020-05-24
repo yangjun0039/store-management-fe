@@ -22,6 +22,11 @@ const routes: Array<RouteConfig> = [
         path: '/custom',
         name: 'Custom',
         component: () => import('../views/pages/Custom.vue'),
+      },
+      {
+        path: '/custom/add',
+        name: 'CustomAdd',
+        component: () => import('../views/pages/CustomAdd.vue')
       }
     ]
   },
