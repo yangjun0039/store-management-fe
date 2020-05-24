@@ -4,49 +4,50 @@
       <h2 class="name">会员管理</h2>
 
       <div class="operation">
-        <el-button type="primary" icon="el-icon-plus">添加会员</el-button>
+        <el-button
+          type="primary"
+          icon="el-icon-plus"
+          @click="$router.push('/custom/add')"
+          >添加会员</el-button
+        >
       </div>
     </div>
 
     <div class="options">
-      <el-row :gutter="20">
-        <el-col
-          :xs="{ span: 24 }"
-          :sm="{ span: 12 }"
-          :lg="{ span: 8 }"
-          :xl="{ span: 6 }"
-        >
-          <el-input
-            placeholder="请输入内容"
-            v-model="searchStr"
-            class="input-with-select"
-          >
-            <el-select
-              v-model="searchType"
-              slot="prepend"
-              placeholder="请选择"
-              class="search-type"
-            >
-              <el-option
-                v-for="(item, index) in searchTypes"
-                :key="index"
-                :label="item.title"
-                :value="item.value"
-              ></el-option>
-            </el-select>
-          </el-input>
-        </el-col>
+      <el-form>
+        <el-row :gutter="20">
+          <el-col :xs="{ span: 24 }" :sm="{ span: 12 }" :xl="{ span: 8 }">
+            <el-form-item>
+              <el-input
+                placeholder="请输入内容"
+                v-model="searchStr"
+                class="input-with-select"
+              >
+                <el-select
+                  v-model="searchType"
+                  slot="prepend"
+                  placeholder="搜索类型"
+                  class="search-type"
+                >
+                  <el-option
+                    v-for="(item, index) in searchTypes"
+                    :key="index"
+                    :label="item.title"
+                    :value="item.value"
+                  ></el-option>
+                </el-select>
+              </el-input>
+            </el-form-item>
+          </el-col>
 
-        <el-col
-          :xs="{ span: 24 }"
-          :sm="{ span: 12 }"
-          :lg="{ span: 8 }"
-          :xl="{ span: 6 }"
-        >
-          <el-button type="success">搜 索</el-button>
-          <el-button>清 空</el-button>
-        </el-col>
-      </el-row>
+          <el-col :xs="{ span: 24 }" :sm="{ span: 12 }" :xl="{ span: 8 }">
+            <el-form-item>
+              <el-button type="success">搜 索</el-button>
+              <el-button>清 空</el-button>
+            </el-form-item>
+          </el-col>
+        </el-row>
+      </el-form>
     </div>
 
     <div class="detail">
