@@ -93,8 +93,9 @@
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from "vue";
+export default Vue.extend({
   name: "Custom",
 
   data() {
@@ -116,7 +117,7 @@ export default {
       list: []
     };
   }
-};
+});
 </script>
 
 <style lang="stylus" scoped>

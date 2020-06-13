@@ -70,8 +70,9 @@
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from "vue";
+export default Vue.extend({
   name: "CustomAdd",
 
   data() {
@@ -81,7 +82,7 @@ export default {
       }
     };
   }
-};
+});
 </script>
 
 <style lang="stylus" scoped></style>

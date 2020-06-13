@@ -12,15 +12,16 @@
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from 'vue'
+export default Vue.extend({
   name: "Home",
 
   components: {
-    Header: () => import("@/components/Header"),
-    Sidebar: () => import("@/components/Sidebar")
+    Header: () => import("@/components/Header.vue"),
+    Sidebar: () => import("@/components/Sidebar.vue")
   }
-};
+})
 </script>
 
 <style lang="stylus" scoped>
