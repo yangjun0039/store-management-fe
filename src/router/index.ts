@@ -6,34 +6,39 @@ Vue.use(VueRouter)
 const routes: Array<RouteConfig> = [
   {
     path: '/',
-    redirect: '/dashboard'
+    redirect: '/login'
+  },
+  {
+    path: '/login',
+    name: 'Login',
+    component: () => import('@/views/Login.vue')
   },
   {
     path: '/admin',
     name: 'Home',
-    component: () => import('../views/Home.vue'),
+    component: () => import('@/views/Home.vue'),
     children: [
       {
         path: '/dashboard',
         name: 'Dashboard',
-        component: () => import('../views/pages/Dashboard.vue'),
+        component: () => import('@/views/pages/Dashboard.vue'),
       },
       {
         path: '/custom',
         name: 'Custom',
-        component: () => import('../views/pages/Custom.vue'),
+        component: () => import('@/views/pages/Custom.vue'),
       },
       {
         path: '/custom/add',
         name: 'CustomAdd',
-        component: () => import('../views/pages/CustomAdd.vue')
+        component: () => import('@/views/pages/CustomAdd.vue')
       }
     ]
   },
   {
     path: '*',
     name: '404',
-    component: () => import('../views/404.vue')
+    component: () => import('@/views/404.vue')
   }
 ]
 

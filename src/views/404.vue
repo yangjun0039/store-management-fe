@@ -10,7 +10,3 @@ export default Vue.extend({
   name: '404'
 })
 </script>
-
-<style lang="stylus">
-
-</style>

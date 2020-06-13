@@ -48,7 +48,7 @@ export default Vue.extend({
     .content
       flex 1
       height 100%
-      padding 20px
+      padding margin-size
       box-sizing border-box
       background #f5f5f5
       overflow hidden

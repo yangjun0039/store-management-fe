@@ -2,7 +2,6 @@
   <div class="sidebar">
     <el-menu
       class="el-menu-vertical-demo"
-      background-color="#545c64"
       text-color="#fff"
       :router="true"
       :default-active="activeIndex"
@@ -47,4 +46,14 @@ export default {
   .el-menu
     height 100%
     overflow-y scroll
+    background-color dark-bgc
+    color light-color
+
+    .el-menu-item
+      &:focus
+      &:hover
+        background-color hover-bgc
+
+      &.is-active
+        color active-color
 </style>
