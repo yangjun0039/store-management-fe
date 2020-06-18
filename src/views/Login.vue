@@ -50,7 +50,7 @@ export default Vue.extend({
       this.$axios.post('/authentication/login', {
         'delegate_code': '1001',
         name: 'yangjun',
-        password: '12345'
+        password: '050039'
       }).then(res => {
         console.log(res)
       }).catch(err => {
