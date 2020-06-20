@@ -46,6 +46,12 @@ export default Vue.extend({
     };
   },
 
+  created() {
+    if (localStorage.getItem('token')) {
+      this.$router.push('/dashboard')
+    }
+  },
+
   methods: {
     login() {
       this.loading = true;

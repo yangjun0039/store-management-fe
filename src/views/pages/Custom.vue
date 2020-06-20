@@ -42,7 +42,7 @@
 
           <el-col :xs="{ span: 24 }" :sm="{ span: 12 }" :xl="{ span: 8 }">
             <el-form-item>
-              <el-button type="success">搜 索</el-button>
+              <el-button type="primary">搜 索</el-button>
               <el-button>清 空</el-button>
             </el-form-item>
           </el-col>
@@ -114,34 +114,21 @@ export default Vue.extend({
       page: 1,
       pageSize: 10,
       list: [
-        {id: '我们'},
-        {id: '我们'},
-        {id: '我们'},
-        {id: '我们'},
-        {id: '我们'},
-        {id: '我们'},
-        {id: '我们'},
-        {id: '我们'},
-        {id: '我们'},
-        {id: '我们'},
-        {id: '我们'},
-        {id: '我们'},
-        {id: '我们'},
-        {id: '我们'},
-        {id: '我们'},
-        {id: '我们'},
-        {id: '我们'},
-        {id: '我们'},
-        {id: '我们'},
-        {id: '我们'},
-        {id: '我们'},
-        {id: '我们'},
-        {id: '我们'},
-        {id: '我们'},
-        {id: '我们'},
-        {id: '我们'},
-        {id: '我们'},
-        {id: '我们'},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
       ]
     };
   }

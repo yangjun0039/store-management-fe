@@ -15,6 +15,11 @@ body
   overflow hidden
   color dark-color
 
+.el-table--border th:last-child,
+.el-table__body td:last-child
+  right -0.5px !important
+  top -0.5px !important
+
 .main-content
   height 100%
   display flex
