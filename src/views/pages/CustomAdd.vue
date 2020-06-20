@@ -4,6 +4,7 @@
       <h2 class="name">会员管理 / 添加会员</h2>
     </div>
 
+    <div class="form-wrapper">
     <div class="form">
       <el-form
         :model="form"
@@ -21,7 +22,7 @@
         </el-form-item>
 
         <el-form-item label="性 别" prop="sex" required>
-          <el-select v-model="form.sex" placeholder="请选择性别">
+          <el-select v-model="form.sex" placeholder="请选择性别" class="full">
             <el-option
               v-for="item in sexOptions"
               :key="item.value"
@@ -33,7 +34,11 @@
         </el-form-item>
 
         <el-form-item label="会员等级" prop="level" required>
-          <el-select v-model="form.level" placeholder="请选择会员等级">
+          <el-select
+            v-model="form.level"
+            placeholder="请选择会员等级"
+            class="full"
+          >
             <el-option
               v-for="item in levelOptions"
               :key="item.value"
@@ -50,6 +55,7 @@
             type="date"
             placeholder="选择有效日期"
             :picker-options="pickerOptions"
+            class="full"
           >
           </el-date-picker>
         </el-form-item>
@@ -96,6 +102,7 @@
           <el-button @click="reset" :disabled="loading">重 置</el-button>
         </el-form-item>
       </el-form>
+    </div>
     </div>
   </div>
 </template>

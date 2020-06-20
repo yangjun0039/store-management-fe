@@ -42,12 +42,16 @@ export default {
 .sidebar
   width 260px
   height 100%
+  background-color dark-bgc
+  overflow hidden
 
   .el-menu
     height 100%
+    margin-right -17px
     overflow-y scroll
-    background-color dark-bgc
     color light-color
+    background-color inherit
+    border-right 1px
 
     .el-menu-item
       font-size 100%

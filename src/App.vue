@@ -15,14 +15,11 @@ body
   overflow hidden
   color dark-color
 
-  .el-select
-  .el-date-editor.el-input
-    width 100%
-
 .main-content
   height 100%
   display flex
   flex-direction column
+  overflow hidden
 
   .head
     flex 0 0 auto
@@ -35,16 +32,27 @@ body
       font-size 100%
       font-weight 400
 
-  .form
+  .form-wrapper
     flex 1
     margin-top margin-size
-    padding 1.25 * margin-size margin-size
+    display flex
+    align-items stretch
     background light-bgc
+    overflow hidden
     border-radius 6px
-    overflow scroll
+
+  .form
+    flex 1
+    padding 1.25 * margin-size margin-size
+    overflow-y scroll
+    margin-right -17px
 
     .el-form
       width 500px
+
+    .el-select.full
+    .el-date-editor.el-input.full
+      width 100%
 
   .options
     flex 0 0 auto
@@ -52,7 +60,7 @@ body
     padding margin-size
     padding-bottom 0
     background light-bgc
-    border-radius 5px
+    border-radius 6px
     overflow hidden
 
   .detail
@@ -62,16 +70,17 @@ body
     margin-top margin-size
     padding margin-size
     background light-bgc
-    border-radius 5px
-    overflow scroll
+    border-radius 6px
+    overflow hidden
 
     .action
       flex 0 0 auto
       margin-bottom margin-size
 
     .table
-      flex  0 0 auto
-      overflow scroll
+      flex 1
+      padding-right 1px
+      overflow hidden
 
     .el-pagination
       flex 0 0 auto

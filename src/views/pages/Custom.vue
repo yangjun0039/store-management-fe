@@ -87,8 +87,7 @@
         :total="400"
         layout="total, sizes, prev, pager, next, jumper"
         background
-      >
-      </el-pagination>
+      ></el-pagination>
     </div>
   </div>
 </template>
@@ -114,7 +113,36 @@ export default Vue.extend({
       searchStr: "",
       page: 1,
       pageSize: 10,
-      list: []
+      list: [
+        {id: '我们'},
+        {id: '我们'},
+        {id: '我们'},
+        {id: '我们'},
+        {id: '我们'},
+        {id: '我们'},
+        {id: '我们'},
+        {id: '我们'},
+        {id: '我们'},
+        {id: '我们'},
+        {id: '我们'},
+        {id: '我们'},
+        {id: '我们'},
+        {id: '我们'},
+        {id: '我们'},
+        {id: '我们'},
+        {id: '我们'},
+        {id: '我们'},
+        {id: '我们'},
+        {id: '我们'},
+        {id: '我们'},
+        {id: '我们'},
+        {id: '我们'},
+        {id: '我们'},
+        {id: '我们'},
+        {id: '我们'},
+        {id: '我们'},
+        {id: '我们'},
+      ]
     };
   }
 });
