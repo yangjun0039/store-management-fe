@@ -47,15 +47,22 @@ export default Vue.extend({
 
   methods: {
     login() {
-      this.$axios.post('/authentication/login', {
-        'delegate_code': '1001',
-        name: 'yangjun',
-        password: '12345'
-      }).then(res => {
-        console.log(res)
-      }).catch(err => {
-        console.log(err)
-      })
+      this.loading = true;
+
+      this.$axios
+        .post("/authentication/login", {
+          // eslint-disable-next-line
+          delegate_code: "10001",
+          name: this.username,
+          password: this.password
+        })
+        .then(res => {
+          if (res.token) {
+            localStorage.setItem("token", res.token);
+            this.$router.replace("/dashboard");
+          }
+        })
+        .finally(() => (this.loading = false));
     }
   }
 });
