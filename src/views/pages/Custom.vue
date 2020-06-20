@@ -1,5 +1,5 @@
 <template>
-  <div class="custom main-content">
+  <div class="custom main-content" v-loading="loading">
     <div class="head">
       <h2 class="name">会员管理</h2>
 
@@ -14,7 +14,7 @@
     </div>
 
     <div class="options">
-      <el-form>
+      <el-form ref="form">
         <el-row :gutter="20">
           <el-col :xs="{ span: 24 }" :sm="{ span: 12 }" :xl="{ span: 8 }">
             <el-form-item>
@@ -42,8 +42,8 @@
 
           <el-col :xs="{ span: 24 }" :sm="{ span: 12 }" :xl="{ span: 8 }">
             <el-form-item>
-              <el-button type="primary">搜 索</el-button>
-              <el-button>清 空</el-button>
+              <el-button type="primary" @click="getData">搜 索</el-button>
+              <el-button @click="reset">清 空</el-button>
             </el-form-item>
           </el-col>
         </el-row>
@@ -84,7 +84,7 @@
         :current-page="page"
         :page-sizes="[10, 25, 50, 100]"
         :page-size="pageSize"
-        :total="400"
+        :total="total"
         layout="total, sizes, prev, pager, next, jumper"
         background
       ></el-pagination>
@@ -94,43 +94,52 @@
 
 <script lang="ts">
 import Vue from "vue";
+import { Form } from 'element-ui'
+
 export default Vue.extend({
   name: "Custom",
 
   data() {
     return {
+      loading: false,
       searchTypes: [
-        {
-          title: "会员卡号",
-          value: "1"
-        },
-        {
-          title: "会员姓名",
-          value: "2"
-        }
+        { title: "会员卡号", value: "1" },
+        { title: "会员姓名", value: "2" }
       ],
       searchType: "",
       searchStr: "",
       page: 1,
       pageSize: 10,
-      list: [
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-      ]
+      total: 0,
+      list: []
     };
+  },
+
+  created() {
+    this.getData();
+  },
+
+  methods: {
+    getData() {
+      this.loading = true;
+
+      this.$axios
+        .get("/user/member-info", {
+          params: {
+            page: this.page,
+            num: this.pageSize,
+            cond: this.searchStr
+          }
+        })
+        .then(res => {
+          console.log(res);
+        })
+        .finally(() => (this.loading = false));
+    },
+
+    reset() {
+      (this.$refs.form as Form).resetFields()
+    },
   }
 });
 </script>
