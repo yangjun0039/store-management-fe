@@ -50,6 +50,9 @@ export default {
     color light-color
 
     .el-menu-item
+      font-size 100%
+      letter-spacing 1px
+
       &:focus
       &:hover
         background-color hover-bgc

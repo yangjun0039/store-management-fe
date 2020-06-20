@@ -15,8 +15,9 @@ body
   overflow hidden
   color dark-color
 
-.el-select
-  width 100%
+  .el-select
+  .el-date-editor.el-input
+    width 100%
 
 .main-content
   height 100%
@@ -31,14 +32,19 @@ body
 
     .name
       margin 0
+      font-size 100%
+      font-weight 400
 
   .form
     flex 1
     margin-top margin-size
-    padding margin-size
+    padding 1.25 * margin-size margin-size
     background light-bgc
-    border-radius 5px
+    border-radius 6px
     overflow scroll
+
+    .el-form
+      width 500px
 
   .options
     flex 0 0 auto

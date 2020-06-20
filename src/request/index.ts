@@ -5,7 +5,8 @@ const axios = Axios.create({
   baseURL: process.env.VUE_APP_URL,
   headers: {
     "Access-Control-Allow-Credentials": true,
-    "Access-Control-Allow-Origin": "*"
+    "Access-Control-Allow-Origin": "*",
+    "Authorization": localStorage.getItem('token') || ''
   },
   timeout: 10000
 });
