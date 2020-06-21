@@ -145,6 +145,7 @@ export default Vue.extend({
         shortcuts: [
           {
             text: "一个月",
+            // eslint-disable-next-line
             onClick(picker: any) {
               const date = new Date();
               date.setTime(date.getTime() + 3600 * 1000 * 24 * 30);
@@ -153,6 +154,7 @@ export default Vue.extend({
           },
           {
             text: "三个月",
+            // eslint-disable-next-line
             onClick(picker: any) {
               const date = new Date();
               date.setTime(date.getTime() + 3600 * 1000 * 24 * 30 * 3);
@@ -161,6 +163,7 @@ export default Vue.extend({
           },
           {
             text: "六个月",
+            // eslint-disable-next-line
             onClick(picker: any) {
               const date = new Date();
               date.setTime(date.getTime() + 3600 * 1000 * 24 * 30 * 6);
@@ -169,6 +172,7 @@ export default Vue.extend({
           },
           {
             text: "一年",
+            // eslint-disable-next-line
             onClick(picker: any) {
               const date = new Date();
               date.setTime(date.getTime() + 3600 * 1000 * 24 * 365);
@@ -177,6 +181,7 @@ export default Vue.extend({
           },
           {
             text: "两年",
+            // eslint-disable-next-line
             onClick(picker: any) {
               const date = new Date();
               date.setTime(date.getTime() + 3600 * 1000 * 24 * 365 * 2);
@@ -243,7 +248,7 @@ export default Vue.extend({
                 new Date(this.form.effect).getTime() / 1000
               )
             })
-            .then(res => {
+            .then(() => {
               this.$message.success("添加会员成功");
               this.reset();
             })

@@ -21,17 +21,22 @@ const routes: Array<RouteConfig> = [
       {
         path: '/dashboard',
         name: 'Dashboard',
-        component: () => import('@/views/pages/Dashboard.vue'),
+        component: () => import('@/views/Dashboard.vue'),
       },
       {
         path: '/custom',
         name: 'Custom',
-        component: () => import('@/views/pages/Custom.vue'),
+        component: () => import('@/views/custom/Custom.vue'),
       },
       {
         path: '/custom/add',
         name: 'CustomAdd',
-        component: () => import('@/views/pages/CustomAdd.vue')
+        component: () => import('@/views/custom/CustomAdd.vue')
+      },
+      {
+        path: '/project',
+        name: 'Project',
+        component: () => import('@/views/service/Project.vue')
       }
     ]
   },

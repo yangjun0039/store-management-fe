@@ -34,6 +34,7 @@
 
 <script lang="ts">
 import Vue from "vue";
+import { mapState } from "vuex";
 
 export default Vue.extend({
   name: "Login",
@@ -46,9 +47,13 @@ export default Vue.extend({
     };
   },
 
+  computed: {
+    ...mapState(["token"])
+  },
+
   created() {
-    if (localStorage.getItem('token')) {
-      this.$router.push('/dashboard')
+    if (this.token) {
+      this.$router.push("/dashboard");
     }
   },
 
@@ -65,7 +70,7 @@ export default Vue.extend({
         })
         .then(res => {
           if (res.token) {
-            localStorage.setItem("token", res.token);
+            this.$store.dispatch("changeToken", res.token);
             this.$router.replace("/dashboard");
           }
         })

@@ -10,6 +10,22 @@ const menuList = [
     path: '/custom'
   },
   {
+    title: '服务管理',
+    icon: 'el-icon-s-custom',
+    children: [
+      {
+        title: '项目管理',
+        icon: 'el-icon-s-custom',
+        path: '/project'
+      },
+      {
+        title: '套餐管理',
+        icon: 'el-icon-s-custom',
+        path: '/package'
+      }
+    ]
+  },
+  {
     title: '交班管理',
     icon: 'el-icon-s-check'
   },

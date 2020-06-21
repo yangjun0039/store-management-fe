@@ -4,6 +4,16 @@
   </div>
 </template>
 
+<script lang="ts">
+import Vue from 'vue'
+
+export default Vue.extend({
+  created() {
+    this.$store.dispatch('init')
+  }
+})
+</script>
+
 <style lang="stylus">
 html
 body
