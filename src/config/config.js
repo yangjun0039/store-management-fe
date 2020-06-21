@@ -11,16 +11,16 @@ const menuList = [
   },
   {
     title: '服务管理',
-    icon: 'el-icon-s-custom',
+    icon: 'el-icon-s-marketing',
     children: [
       {
         title: '项目管理',
-        icon: 'el-icon-s-custom',
+        icon: 'el-icon-s-marketing',
         path: '/project'
       },
       {
         title: '套餐管理',
-        icon: 'el-icon-s-custom',
+        icon: 'el-icon-s-marketing',
         path: '/package'
       }
     ]

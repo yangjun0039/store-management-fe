@@ -7,6 +7,7 @@
         <el-button
           type="primary"
           icon="el-icon-plus"
+          @click="$router.push('/project/add')"
           >添加项目</el-button
         >
       </div>

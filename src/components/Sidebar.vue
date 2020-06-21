@@ -7,7 +7,7 @@
       :default-active="activeIndex"
     >
       <template v-for="(item, index) in menuList">
-        <el-submenu v-if="item.children" :key="index">
+        <el-submenu v-if="item.children" :key="index" :index="index.toString()">
           <template slot="title">
             <i :class="item.icon"></i>
             <span>{{ item.title }}</span>
@@ -66,6 +66,7 @@ export default {
   .el-menu
     height 100%
     margin-right -17px
+    padding-right 17px
     overflow-y scroll
     overflow-x hidden
     color light-color

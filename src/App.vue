@@ -65,6 +65,9 @@ body
     .el-form
       width 500px
 
+      .el-form-item
+        padding 2px 0
+
     .el-select.full
     .el-date-editor.el-input.full
       width 100%
