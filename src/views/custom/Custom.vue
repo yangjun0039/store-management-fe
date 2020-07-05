@@ -19,11 +19,11 @@
           <el-col :xs="{ span: 24 }" :sm="{ span: 12 }" :xl="{ span: 8 }">
             <el-form-item>
               <el-input
-                placeholder="请输入内容"
+                placeholder="请输入搜索内容"
                 v-model="searchStr"
                 class="input-with-select"
               >
-                <el-select
+                <!-- <el-select
                   v-model="searchType"
                   slot="prepend"
                   placeholder="搜索类型"
@@ -35,7 +35,7 @@
                     :label="item.title"
                     :value="item.value"
                   ></el-option>
-                </el-select>
+                </el-select> -->
               </el-input>
             </el-form-item>
           </el-col>
@@ -54,22 +54,32 @@
       <div class="table">
         <el-table border stripe height="100%" :data="list">
           <el-table-column prop="id" label="会员卡号" />
-          <el-table-column prop="id" label="姓名" />
-          <el-table-column prop="id" label="性别" />
-          <el-table-column prop="id" label="出生日期" />
-          <el-table-column prop="id" label="职业" />
-          <el-table-column prop="id" label="证件号码" />
-          <el-table-column prop="id" label="联系电话" />
-          <el-table-column prop="id" label="联系地址" />
-          <el-table-column prop="id" label="会员类型" />
-          <el-table-column prop="id" label="会员等级" />
-          <el-table-column prop="id" label="优惠方式" />
-          <el-table-column prop="id" label="卡内余额" />
-          <el-table-column prop="id" label="剩余次数" />
-          <el-table-column prop="id" label="累计消费" />
-          <el-table-column prop="id" label="其他" />
-          <el-table-column prop="id" label="会员积分" />
-          <el-table-column prop="id" label="电子邮件" />
+          <el-table-column prop="name" label="姓名" />
+          <el-table-column prop="id" label="性别">
+            <template slot-scope="scope">
+              {{
+                scope.row.sex.toString() === "1"
+                  ? "男"
+                  : scope.row.sex.toString() === "2"
+                  ? "女"
+                  : "未知"
+              }}
+            </template>
+          </el-table-column>
+          <el-table-column prop="" label="出生日期" />
+          <el-table-column prop="position" label="职业" />
+          <el-table-column prop="" label="证件号码" />
+          <el-table-column prop="phone" label="联系电话" />
+          <el-table-column prop="addr" label="联系地址" />
+          <el-table-column prop="" label="会员类型" />
+          <el-table-column prop="" label="会员等级" />
+          <el-table-column prop="" label="优惠方式" />
+          <el-table-column prop="" label="卡内余额" />
+          <el-table-column prop="" label="剩余次数" />
+          <el-table-column prop="" label="累计消费" />
+          <el-table-column prop="" label="其他" />
+          <el-table-column prop="" label="会员积分" />
+          <el-table-column prop="" label="电子邮件" />
           <el-table-column label="操作" fixed="right" width="130">
             <template>
               <el-button type="text" size="small">编辑</el-button>
@@ -94,7 +104,7 @@
 
 <script lang="ts">
 import Vue from "vue";
-import { Form } from 'element-ui'
+import { Form } from "element-ui";
 
 export default Vue.extend({
   name: "Custom",
@@ -111,7 +121,7 @@ export default Vue.extend({
       page: 1,
       pageSize: 10,
       total: 0,
-      list: []
+      list: [] as any[]
     };
   },
 
@@ -133,13 +143,16 @@ export default Vue.extend({
         })
         .then(res => {
           console.log(res);
+          if (Array.isArray(res)) {
+            this.list = res;
+          }
         })
         .finally(() => (this.loading = false));
     },
 
     reset() {
-      (this.$refs.form as Form).resetFields()
-    },
+      (this.$refs.form as Form).resetFields();
+    }
   }
 });
 </script>
