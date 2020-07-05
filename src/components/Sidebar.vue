@@ -66,7 +66,6 @@ export default {
   .el-menu
     height 100%
     margin-right -17px
-    padding-right 17px
     overflow-y scroll
     overflow-x hidden
     color light-color

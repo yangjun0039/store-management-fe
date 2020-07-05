@@ -9,8 +9,6 @@ import Vue from "vue";
 
 export default Vue.extend({
   created() {
-    this.$store.dispatch("init");
-
     window.addEventListener("keydown", event => {
       const page: any = this.$refs.page
 
