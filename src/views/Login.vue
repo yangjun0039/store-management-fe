@@ -58,6 +58,10 @@ export default Vue.extend({
   },
 
   methods: {
+    enterHandler() {
+      this.login()
+    },
+
     login() {
       this.loading = true;
 

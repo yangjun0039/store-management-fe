@@ -1,17 +1,25 @@
 <template>
   <div id="app">
-    <router-view />
+    <router-view ref="page" />
   </div>
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
+import Vue from "vue";
 
 export default Vue.extend({
   created() {
-    this.$store.dispatch('init')
+    this.$store.dispatch("init");
+
+    window.addEventListener("keydown", event => {
+      const page: any = this.$refs.page
+
+      if (event.keyCode === 13 && typeof page.enterHandler === 'function') {
+        page.enterHandler();
+      }
+    });
   }
-})
+});
 </script>
 
 <style lang="stylus">
