@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueRouter, { RouteConfig } from 'vue-router'
+import store from '../store'
 
 Vue.use(VueRouter)
 
@@ -17,6 +18,7 @@ const routes: Array<RouteConfig> = [
     path: '/admin',
     name: 'Home',
     component: () => import('@/views/Home.vue'),
+    meta: { auth: true },
     children: [
       {
         path: '/dashboard',
@@ -56,6 +58,14 @@ const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes
+})
+
+router.beforeEach((to, _from, next) => {
+  if (to.matched.some(item => item.meta.auth) && !store.state.token) {
+    next('/login')
+  }
+
+  next()
 })
 
 export default router

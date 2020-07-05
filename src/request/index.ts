@@ -1,17 +1,23 @@
 import Axios from "axios";
 import { Message } from "element-ui";
+import store from '../store'
 
 const axios = Axios.create({
   baseURL: process.env.VUE_APP_URL,
   headers: {
     "Access-Control-Allow-Credentials": true,
     "Access-Control-Allow-Origin": "*",
-    "Authorization": localStorage.getItem('token') || ''
+
   },
   timeout: 10000
 });
 
 axios.interceptors.request.use(config => {
+  config.headers = {
+    ...config.headers,
+    "Authorization": store.state.token || ''
+  }
+
   return config;
 });
 
